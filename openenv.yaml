@@ -1,0 +1,17 @@
+name: guess-number-env
+description: A simple number guessing environment where an agent guesses a number between 1 and 10 with feedback.
+
+entry_point: env.env:MyEnv
+
+tasks:
+  - name: easy
+    description: Guess number between 1 and 10
+    max_steps: 5
+
+  - name: medium
+    description: Same environment, repeated task
+    max_steps: 5
+
+  - name: hard
+    description: Same environment, repeated task
+    max_steps: 5

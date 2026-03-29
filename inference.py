@@ -1,14 +1,14 @@
-from env import MyEnv
-from policies import random_policy
+from env.env import MyEnv
+from agents.policies import RandomPolicy
 
-def run_episode(env):
-    state = env.reset()
+def run_episode(env, policy):
+    obs = env.reset()
     done = False
     total_reward = 0
 
     while not done:
-        action = random_policy(state)
-        state, reward, done = env.step(action)
+        action = policy.select_action(obs)
+        obs, reward, done = env.step(action)
         total_reward += reward
 
     return total_reward
@@ -16,16 +16,18 @@ def run_episode(env):
 
 def main():
     env = MyEnv()
+    policy = RandomPolicy()
+
     episodes = 10
     scores = []
 
     for i in range(episodes):
-        score = run_episode(env)
+        score = run_episode(env, policy)
         print(f"Episode {i+1}: {score}")
         scores.append(score)
 
-    avg_score = sum(scores) / len(scores)
-    print("Average Score:", avg_score)
+    avg = sum(scores) / len(scores)
+    print("Average Score:", avg)
 
 
 if __name__ == "__main__":
