@@ -1,3 +1,11 @@
+---
+title: Guess Number RL
+emoji: 🤖
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
 # Guess Number RL Environment
 
 ## 📌 Overview
