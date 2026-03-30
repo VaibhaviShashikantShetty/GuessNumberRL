@@ -1,7 +1,6 @@
 from env.env import MyEnv
 from agents.policies import RandomPolicy
 from agents.policies import SmartPolicy
-import matplotlib.pyplot as plt
 env = MyEnv()
 wins = 0
 total = 5
